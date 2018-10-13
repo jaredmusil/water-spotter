@@ -221,25 +221,16 @@
 </ion-header>
 
 <ion-content>
-  <!-- <div class="states">
-    <div class="states__item">
-      <svg class="icon icon-state-AK">
-        <use xlink:href="#icon-state-AK"></use>
-      </svg>
-      <span class="name">AK</span>
-    </div>
-    <div class="states__item">
-      <svg class="icon icon-state-AL">
-        <use xlink:href="#icon-state-AL"></use>
-      </svg>
-      <span class="name">AL</span>
-    </div>
-  </div> -->
-      
-
   <ion-list>
     <button ion-item *ngFor="let item of states" (click)="itemTapped($event, item)">
       <!-- <ion-icon [name]="item.icon" item-start></ion-icon> -->
+
+      <div class="states__item">
+        <svg class="icon" [ngClass]="'icon-state-' + item.postal">
+          <use [attr.xlink:href]="'#icon-state-' + item.postal"></use>
+        </svg>
+      </div>
+
       {{item.postal}}
       <div class="item-note" item-end>
         {{item.state}}
