@@ -1,0 +1,83 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Home</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-card>
+    <ion-card-header>
+      {{state}}
+    </ion-card-header>
+    <ion-card-content>  
+      MAP
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card>
+    <ion-card-header>
+      Key
+    </ion-card-header>
+    <ion-card-content>
+        <table class="ia_map_key">
+          <tbody>
+            <tr>
+              <td colspan="6">Current nitrate concentrations (mg/L)</td>
+            </tr>
+            <tr>
+              <th style="background-color:#377EB8; color:#ccc;">&lt;.5</th>
+              <th style="background-color:#4DAF4A; color:#000;">.5-2.99</th>
+              <th style="background-color:#984EA3; color:#000;">3-4.99</th>
+              <th style="background-color:#FFFF33; color:#000;">5-9.99</th>
+              <th style="background-color:#FF7F00; color:#000;">10-19.99</th>
+              <th style="background-color:#E41A1C; color:#ccc;">20+</th>
+            </tr>
+            <tr>
+              <td>Low</td>
+              <td colspan="4"></td>
+              <td>High</td>
+            </tr>
+          </tbody>
+        </table>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card>
+    <ion-card-header>
+      Data
+    </ion-card-header>
+    <ion-card-content>
+      <table id="ia_nitrate_table" class="tablesorter" style="display: table;">
+        <thead>
+          <tr>
+            <th class="header headerSortUp">Station</th>
+            <th class="header headerSortUp">Nitrate</th>
+            <th class="header headerSortUp">Time</th>
+            <th class="header headerSortUp">Date</th>
+          </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td id="nitrate_code_05482300" readonly="readonly"><a href="https://waterdata.usgs.gov/ia/nwis/uv?cb_99133=on&amp;format=gif_default&amp;site_no=05482300">05482300</a></td>
+          <td id="nitrate_code_05482300" readonly="readonly">9.69</td><td id="nitrate_code_05482300" readonly="readonly">15:15</td>
+          <td id="nitrate_code_05482300" readonly="readonly">02/02/2018</td>
+        </tr>
+        <tr><td id="nitrate_code_05482000" readonly="readonly"><a href="https://waterdata.usgs.gov/ia/nwis/uv?cb_99133=on&amp;format=gif_default&amp;site_no=05482000">05482000</a></td><td id="nitrate_code_05482000" readonly="readonly">4.85</td><td id="nitrate_code_05482000" readonly="readonly">15:15</td><td id="nitrate_code_05482000" readonly="readonly">02/02/2018</td></tr><tr><td id="nitrate_code_05484500" readonly="readonly"><a href="https://waterdata.usgs.gov/ia/nwis/uv?cb_99133=on&amp;format=gif_default&amp;site_no=05484500">05484500</a></td><td id="nitrate_code_05484500" readonly="readonly">4.57</td><td id="nitrate_code_05484500" readonly="readonly">15:00</td><td id="nitrate_code_05484500" readonly="readonly">02/02/2018</td></tr><tr><td id="nitrate_code_05484000" readonly="readonly"><a href="https://waterdata.usgs.gov/ia/nwis/uv?cb_99133=on&amp;format=gif_default&amp;site_no=05484000">05484000</a></td><td id="nitrate_code_05484000" readonly="readonly">4.5</td><td id="nitrate_code_05484000" readonly="readonly">14:45</td><td id="nitrate_code_05484000" readonly="readonly">02/02/2018</td></tr><tr><td id="nitrate_code_05465500" readonly="readonly"><a href="https://waterdata.usgs.gov/ia/nwis/uv?cb_99133=on&amp;format=gif_default&amp;site_no=05465500">05465500</a></td><td id="nitrate_code_05465500" readonly="readonly">1.14</td><td id="nitrate_code_05465500" readonly="readonly">15:00</td><td id="nitrate_code_05465500" readonly="readonly">02/02/2018</td></tr><tr><td id="nitrate_code_06817000" readonly="readonly"><a href="https://waterdata.usgs.gov/ia/nwis/uv?cb_99133=on&amp;format=gif_default&amp;site_no=06817000">06817000</a></td><td id="nitrate_code_06817000" readonly="readonly">-999999</td><td id="nitrate_code_06817000" readonly="readonly">15:15</td><td id="nitrate_code_06817000" readonly="readonly">02/02/2018</td></tr><tr><td id="nitrate_code_05412500" readonly="readonly"><a href="https://waterdata.usgs.gov/ia/nwis/uv?cb_99133=on&amp;format=gif_default&amp;site_no=05412500">05412500</a></td><td id="nitrate_code_05412500" readonly="readonly">-999999</td><td id="nitrate_code_05412500" readonly="readonly">15:15</td><td id="nitrate_code_05412500" readonly="readonly">02/02/2018</td></tr><tr><td id="nitrate_code_06808500" readonly="readonly"><a href="https://waterdata.usgs.gov/ia/nwis/uv?cb_99133=on&amp;format=gif_default&amp;site_no=06808500">06808500</a></td><td id="nitrate_code_06808500" readonly="readonly">-999999</td><td id="nitrate_code_06808500" readonly="readonly">15:00</td><td id="nitrate_code_06808500" readonly="readonly">02/02/2018</td></tr><tr><td id="nitrate_code_05464420" readonly="readonly"><a href="https://waterdata.usgs.gov/ia/nwis/uv?cb_99133=on&amp;format=gif_default&amp;site_no=05464420">05464420</a></td><td id="nitrate_code_05464420" readonly="readonly">-999999</td><td id="nitrate_code_05464420" readonly="readonly">11:30</td><td id="nitrate_code_05464420" readonly="readonly">12/20/2017</td></tr><tr><td id="nitrate_code_05482500" readonly="readonly"><a href="https://waterdata.usgs.gov/ia/nwis/uv?cb_99133=on&amp;format=gif_default&amp;site_no=05482500">05482500</a></td><td id="nitrate_code_05482500" readonly="readonly">4.93</td><td id="nitrate_code_05482500" readonly="readonly">10:00</td><td id="nitrate_code_05482500" readonly="readonly">12/04/2017</td></tr><tr><td id="nitrate_code_05418720" readonly="readonly"><a href="https://waterdata.usgs.gov/ia/nwis/uv?cb_99133=on&amp;format=gif_default&amp;site_no=05418720">05418720</a></td><td id="nitrate_code_05418720" readonly="readonly">6.77</td><td id="nitrate_code_05418720" readonly="readonly">21:15</td><td id="nitrate_code_05418720" readonly="readonly">11/16/2017</td></tr></tbody>
+        <tfoot>
+          <tr>
+            <td colspan="4" style="text-align:center; color:#000; background-color:#91B0BD;">Values are provisional and subject to change</td>
+          </tr>
+        </tfoot>
+      </table>
+      <!-- <p *ngIf="seasonal">Sites operate on a seasonal basis</p>
+      <p *ngIf="realtime">1 or more sites are not reporting realtime data</p> -->
+    </ion-card-content>
+  </ion-card>
+</ion-content>
+
+<ion-footer>
+  <p><a href="https://github.com/jaredmusil/water-spotter/">GitHub</a></p>
+</ion-footer>
