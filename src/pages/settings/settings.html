@@ -8,11 +8,42 @@
 </ion-header>
 
 <ion-content padding>
-  <pre>
-  Default State
-  Update Interval
-  Push notifications
-  - criteria
-  Donate
-  </pre>
+  <ion-card>
+    <ion-card-header>
+      Default State
+    </ion-card-header>
+    <ion-card-content>  
+      <ion-select [(ngModel)]="defaultState">
+        <ion-option value="IA">Iowa</ion-option>
+        <ion-option value="GA">Georgia</ion-option>
+      </ion-select>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card>
+    <ion-card-header>
+      Update Interval
+    </ion-card-header>
+    <ion-card-content>  
+      ...
+    </ion-card-content>
+  </ion-card>
+  
+  <ion-card>
+    <ion-card-header>
+      Donate
+    </ion-card-header>
+    <ion-card-content>  
+      ...
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card>
+    <ion-card-header>
+      Push Notifications
+    </ion-card-header>
+    <ion-card-content>  
+      ...
+    </ion-card-content>
+  </ion-card>
 </ion-content>
