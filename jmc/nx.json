@@ -1,0 +1,21 @@
+{
+  "npmScope": "jmc",
+  "implicitDependencies": {
+    "angular.json": "*",
+    "package.json": "*",
+    "tsconfig.json": "*",
+    "tslint.json": "*",
+    "nx.json": "*"
+  },
+  "projects": {
+    "water-spotter-e2e": {
+      "tags": []
+    },
+    "water-spotter": {
+      "tags": []
+    },
+    "ui": {
+      "tags": []
+    }
+  }
+}

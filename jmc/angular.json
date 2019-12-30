@@ -1,0 +1,164 @@
+{
+  "version": 1,
+  "projects": {
+    "water-spotter": {
+      "projectType": "application",
+      "schematics": {},
+      "root": "apps/water-spotter",
+      "sourceRoot": "apps/water-spotter/src",
+      "prefix": "jmc",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/apps/water-spotter",
+            "index": "apps/water-spotter/src/index.html",
+            "main": "apps/water-spotter/src/main.ts",
+            "polyfills": "apps/water-spotter/src/polyfills.ts",
+            "tsConfig": "apps/water-spotter/tsconfig.app.json",
+            "aot": false,
+            "assets": [
+              "apps/water-spotter/src/favicon.ico",
+              "apps/water-spotter/src/assets"
+            ],
+            "styles": ["apps/water-spotter/src/styles.css"],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "apps/water-spotter/src/environments/environment.ts",
+                  "with": "apps/water-spotter/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb",
+                  "maximumError": "10kb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "water-spotter:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "water-spotter:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "water-spotter:build"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "apps/water-spotter/tsconfig.app.json",
+              "apps/water-spotter/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!apps/water-spotter/**"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "apps/water-spotter/jest.config.js",
+            "tsConfig": "apps/water-spotter/tsconfig.spec.json",
+            "setupFile": "apps/water-spotter/src/test-setup.ts"
+          }
+        }
+      }
+    },
+    "water-spotter-e2e": {
+      "root": "apps/water-spotter-e2e",
+      "sourceRoot": "apps/water-spotter-e2e/src",
+      "projectType": "application",
+      "architect": {
+        "e2e": {
+          "builder": "@nrwl/cypress:cypress",
+          "options": {
+            "cypressConfig": "apps/water-spotter-e2e/cypress.json",
+            "tsConfig": "apps/water-spotter-e2e/tsconfig.e2e.json",
+            "devServerTarget": "water-spotter:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "water-spotter:serve:production"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": ["apps/water-spotter-e2e/tsconfig.e2e.json"],
+            "exclude": ["**/node_modules/**", "!apps/water-spotter-e2e/**"]
+          }
+        }
+      }
+    },
+    "ui": {
+      "projectType": "library",
+      "root": "libs/ui",
+      "sourceRoot": "libs/ui/src",
+      "prefix": "jmc",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/ui/tsconfig.lib.json",
+              "libs/ui/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/ui/**"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/ui/jest.config.js",
+            "tsConfig": "libs/ui/tsconfig.spec.json",
+            "setupFile": "libs/ui/src/test-setup.ts"
+          }
+        }
+      },
+      "schematics": {}
+    }
+  },
+  "cli": {
+    "defaultCollection": "@nrwl/angular"
+  },
+  "schematics": {
+    "@nrwl/angular:application": {
+      "unitTestRunner": "jest",
+      "e2eTestRunner": "cypress"
+    },
+    "@nrwl/angular:library": {
+      "unitTestRunner": "jest"
+    }
+  },
+  "defaultProject": "water-spotter"
+}
